@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Me - 183132 - Abdelrahman Ghassan Zaatar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="contact.html">Contact Me</a>
+  </nav>
+
+  <h1>Contact Me</h1>
+
+  <form id="contactForm">
+    <div>
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName">
+    </div>
+
+    <div>
+      <label for="email">Email Address</label>
+      <input type="text" id="email">
+    </div>
+
+    <div>
+      <label for="country">Country</label>
+      <select id="country">
+        <option value="">-- Select --</option>
+        <option>Jordan</option>
+        <option>Palestine</option>
+        <option>Saudi Arabia</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="comments">Comments</label>
+      <textarea id="comments"></textarea>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var name = document.getElementById("fullName").value.trim();
+      var email = document.getElementById("email").value.trim();
+      var country = document.getElementById("country").value;
+      var comments = document.getElementById("comments").value.trim();
+
+      if (name === "" || email === "" || country === "" || comments === "") {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      alert("Form submitted successfully!");
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
